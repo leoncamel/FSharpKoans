@@ -57,6 +57,7 @@ module ``about the stock example`` =
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+        let filtered_item = stockData |> List.filter (fun (x:string) -> x.StartsWith("2012-03-13")) |> List.head
+        let result = filtered_item.Split(',').[0]
         
         AssertEquality "2012-03-13" result
